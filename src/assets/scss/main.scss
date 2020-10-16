@@ -1,0 +1,108 @@
+@import '~normalize.css';
+@import 'variables';
+@import 'typography';
+
+body {
+  background-color: $light;
+}
+
+.card-wrapper {
+  width: 100vw;
+  height: 100vh;
+  max-height: 100%;
+  max-height: -webkit-fill-available;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  position: relative;
+  width: 640px;
+
+  margin: 0 auto;
+
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+
+  overflow: hidden;
+
+  background: linear-gradient(
+      315deg,
+      rgba($dark, 0.6) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #f0f1f5;
+  background-blend-mode: soft-light, normal;
+  box-shadow: -8.90123px -8.90123px 26.7037px #ffffff,
+    13.3518px 13.3518px 26.7037px rgba(174, 174, 192, 0.4);
+  border-radius: 1rem;
+
+  transition: box-shadow $transition-time * 3
+      cubic-bezier(0.45, 1.35, 0.71, -0.37),
+    transform $transition-time * 3 cubic-bezier(0.45, 1.35, 0.71, -0.37),
+    filter $transition-time * 3 cubic-bezier(0.45, 1.35, 0.71, -0.37),
+    opacity $transition-time * 3 ease-in-out, width $transition-time,
+    height $transition-time, border-radius $transition-time;
+
+  body.loading & {
+    transform: scale(1.5);
+    opacity: 0;
+    box-shadow: 0 0 200px #ffffff, 0 0 200px rgba(174, 174, 192, 0.4);
+    filter: blur(4px);
+  }
+
+  header {
+    margin-top: 2em;
+    padding: 0 2rem;
+    h1,
+    p {
+      margin: 0;
+    }
+  }
+
+  section {
+    padding: 0 2rem;
+  }
+
+  section.contacts {
+    margin-bottom: 2em;
+    a {
+      margin-right: 1em;
+    }
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .card {
+    width: 480px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .card {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    transition-delay: $transition-time !important;
+    transition: all $transition-time ease-in, width 0s;
+
+    body.loading & {
+      filter: blur(10px);
+    }
+
+    section.contacts {
+      & > p {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+      }
+      a {
+        margin-right: 0;
+        margin: 0.25em 0;
+      }
+    }
+  }
+}
