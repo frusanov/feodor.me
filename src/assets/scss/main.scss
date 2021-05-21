@@ -85,9 +85,10 @@ body {
     height: 100%;
     border-radius: 0;
     transition-delay: $transition-time !important;
-    transition: all $transition-time ease-in, width 0s;
+    transition: all $transition-time * 2 ease-in, width 0s;
 
     body.loading & {
+      transform: scale(1.2);
       filter: blur(10px);
     }
 
