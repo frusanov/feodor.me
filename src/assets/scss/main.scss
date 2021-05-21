@@ -40,18 +40,18 @@ body {
     13.3518px 13.3518px 26.7037px rgba(174, 174, 192, 0.4);
   border-radius: 1rem;
 
-  transition: box-shadow $transition-time * 3
-      cubic-bezier(0.45, 1.35, 0.71, -0.37),
-    transform $transition-time * 3 cubic-bezier(0.45, 1.35, 0.71, -0.37),
-    filter $transition-time * 3 cubic-bezier(0.45, 1.35, 0.71, -0.37),
-    opacity $transition-time * 3 ease-in-out, width $transition-time,
-    height $transition-time, border-radius $transition-time;
+  transition: box-shadow $transition-time * 3 $transition-curve,
+    transform $transition-time * 3 $transition-curve,
+    filter $transition-time * 3 $transition-curve,
+    opacity $transition-time * 3 $transition-curve;
+  //  width $transition-time;
+  // height $transition-time, border-radius $transition-time;
 
   body.loading & {
-    transform: scale(1.5);
+    transform: scale(0.5);
     opacity: 0;
-    box-shadow: 0 0 200px #ffffff, 0 0 200px rgba(174, 174, 192, 0.4);
-    filter: blur(4px);
+    box-shadow: 0 0 10px #ffffff, 0 0 10px rgba(174, 174, 192, 0.4);
+    filter: blur(5px);
   }
 
   header {

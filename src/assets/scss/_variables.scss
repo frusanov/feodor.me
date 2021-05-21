@@ -5,4 +5,5 @@ $dark: #000000;
 $light: #f0f1f5;
 
 /* Animations */
-$transition-time: 0.25s;
+$transition-time: 0.3s;
+$transition-curve: cubic-bezier(.68,.24,.17,1.66);
