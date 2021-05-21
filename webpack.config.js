@@ -14,7 +14,7 @@ const isProduction = !isDevelopment;
 const plugins = function getPluginsArray() {
   const base = [
     new CleanWebpackPlugin(),
-    new CopyPlugin({ patterns: ['favicon.ico', '*.png'] }),
+    new CopyPlugin({ patterns: ['favicon.ico', '*.png', 'site.webmanifest'] }),
     new HTMLPlugin({
       template: './index.html',
       minify: {
