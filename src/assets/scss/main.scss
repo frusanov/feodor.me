@@ -44,8 +44,6 @@ body {
     transform $transition-time * 3 $transition-curve,
     filter $transition-time * 3 $transition-curve,
     opacity $transition-time * 3 $transition-curve;
-  //  width $transition-time;
-  // height $transition-time, border-radius $transition-time;
 
   body.loading & {
     transform: scale(0.5);
