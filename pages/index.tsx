@@ -20,7 +20,7 @@ const Home: NextPage = () => {
           </Header>
           <CardContent>
             <p>
-              Hello! Welcome to my personal webpage. My name is Feodor and I'm a
+              Hello! Welcome to my personal webpage. My name is Feodor and I&apos;m a
               full-stack web developer, focusing more specifically on front-end
               tasks.
             </p>
