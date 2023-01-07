@@ -6,10 +6,6 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0"
-          />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -30,7 +26,7 @@ class MyDocument extends Document {
           <link rel="manifest" href="/site.webmanifest" />
           <link
             rel="stylesheet"
-            href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,900;1,400&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,500;0,700;0,900;1,400&display=swap"
           />
           <meta name="robots" content="index, follow" />
           <meta

@@ -1,4 +1,4 @@
-import type { ReactElement } from "react";
+import type { ReactNode } from "react";
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { lightTheme } from "./light";
 
@@ -28,11 +28,28 @@ export const GlobalStyles = createGlobalStyle<ThemedElement>`
       border-color: ${({ theme }) => theme.color.primary};
     }
   }
+
+  p {
+    margin: 0.5em 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 0.5em;
+    font-weight: 700;
+  }
 `;
 
 export interface ThemedProps {
-  children?: ReactElement | Array<ReactElement>;
+  children: ReactNode;
 }
 export const Themed = ({ children }: ThemedProps) => (
-  <ThemeProvider theme={lightTheme}>{children}</ThemeProvider>
+  <ThemeProvider theme={lightTheme}>
+    {/* @ts-ignore //TODO: fix that */}
+    { children }
+  </ThemeProvider>
 );
